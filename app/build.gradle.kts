@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.androidx.ui.text.google.fonts)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.accompanist.drawablepainter)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

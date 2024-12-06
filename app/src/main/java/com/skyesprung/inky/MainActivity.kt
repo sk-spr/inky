@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -17,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import com.skyesprung.inky.model.TopLevelRoutes
 import com.skyesprung.inky.ui.theme.InkyTheme
 import com.skyesprung.inky.view.AppListScreen
+import com.skyesprung.inky.view.BottomBar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +30,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             InkyTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavHost(navController, startDestination = TopLevelRoutes.AppScreen, modifier = Modifier.padding(innerPadding)) {
+                Scaffold(modifier = Modifier.fillMaxSize(),
+                    bottomBar = { BottomBar(navController) }) { innerPadding ->
+                    NavHost(
+                        navController,
+                        startDestination = TopLevelRoutes.AppScreen,
+                        modifier = Modifier.padding(innerPadding),
+                        enterTransition = { EnterTransition.None },
+                        exitTransition = { ExitTransition.None }
+                    ) {
                         composable<TopLevelRoutes.AppScreen> { AppListScreen() }
                     }
                 }

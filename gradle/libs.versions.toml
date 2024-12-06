@@ -1,5 +1,5 @@
 [versions]
-agp = "8.6.1"
+agp = "8.7.3"
 kotlin = "2.1.0"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -12,6 +12,7 @@ navigationCompose = "2.8.4"
 uiTextGoogleFonts = "1.7.5"
 runtimeLivedata = "1.7.5"
 kotlinxSerializationJson = "1.7.3"
+accompanistDrawablepainter = "0.36.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +34,7 @@ androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
 kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlin-serialization-json" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+accompanist-drawablepainter = { group = "com.google.accompanist", name = "accompanist-drawablepainter", version.ref = "accompanistDrawablepainter" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
